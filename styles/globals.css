@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.fa-icon {
+  color: transparent;
+  stroke: #000;
+  stroke-width: 40;
+}
