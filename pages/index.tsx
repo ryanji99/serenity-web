@@ -8,20 +8,23 @@ export default function Home() {
   return (
     // CTA
     <>
-      <div className="flex flex-col items-center justify-center md:flex-row">
-        <div className="flex w-full flex-col md:block md:w-1/2">
-          <h1 className="mb-4 max-w-xl text-4xl font-bold leading-snug md:mb-8 md:text-4xl md:leading-snug lg:text-6xl lg:leading-snug">
+      <div className="flex w-full flex-col justify-between md:flex-row">
+        <div className="flex-col">
+          <h1 className="mb-4 max-w-xl text-center text-5xl font-bold leading-snug md:mb-8 md:text-left md:text-4xl md:leading-snug lg:text-6xl lg:leading-snug">
             Fashion Has Never Been Cheaper
           </h1>
-          <p className="mb-4 max-w-md text-lg md:mb-8 md:text-xl">
-            Save big on new and used clothing apparel. Prices you won’t find
-            anywhere else. Guaranteed.
-          </p>
-          <button className="mb-8 rounded-md bg-primary py-3 px-10 text-lg text-white md:text-2xl">
-            Start Shopping
-          </button>
+          <div className="flex flex-col items-center justify-center md:block">
+            <p className="text-md mb-4 max-w-md text-center font-medium md:mb-8 md:text-left md:text-xl">
+              Save big on new and used clothing apparel. Prices you won’t find
+              anywhere else. Guaranteed.
+            </p>
+            <button className="mb-8 rounded-md bg-primary py-3 px-10 text-lg text-white md:text-2xl">
+              Start Shopping
+            </button>
+          </div>
         </div>
-        <div className="mb-4 flex w-full justify-center md:mb-8 md:w-1/2 md:justify-end">
+
+        <div className="mb-4 hidden md:block">
           <Image src={GirlImage} alt="girl" quality={100} objectFit="contain" />
         </div>
       </div>

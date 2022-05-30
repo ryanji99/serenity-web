@@ -1,23 +1,20 @@
 import '../styles/globals.css';
-import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
+import { config } from '@fortawesome/fontawesome-svg-core';
+import { ApolloProvider } from '@apollo/client';
+import { AppPropsWithLayout } from '../types/types';
+import { apolloClient } from '../apollo/apolloClient.config';
+
 config.autoAddCss = false;
-import type { ReactElement, ReactNode } from 'react';
-import type { NextPage } from 'next';
-import type { AppProps } from 'next/app';
-
-type NextPageWithLayout = NextPage & {
-  getLayout?: (page: ReactElement) => ReactNode;
-};
-
-type AppPropsWithLayout = AppProps & {
-  Component: NextPageWithLayout;
-};
 
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout = Component.getLayout ?? ((page) => page);
 
-  return getLayout(<Component {...pageProps} />);
+  return getLayout(
+    <ApolloProvider client={apolloClient}>
+      <Component {...pageProps} />
+    </ApolloProvider>
+  );
 }
 
 export default MyApp;

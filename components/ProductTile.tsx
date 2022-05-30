@@ -4,7 +4,7 @@ import tempSupreme from '../public/images/supreme.jpg';
 const ProductTile = () => {
   return (
     <>
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between gap-4">
         <div>
           <Image
             src={tempSupreme}
