@@ -17,7 +17,7 @@ const Layout = ({ children }: LayoutProps) => {
       </Head>
 
       <Navbar />
-      <main className="px-[5%]">{children}</main>
+      <main className="py-[2%] px-[5%]">{children}</main>
     </div>
   );
 };

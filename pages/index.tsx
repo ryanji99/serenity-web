@@ -8,7 +8,7 @@ export default function Home() {
   return (
     // CTA
     <>
-      <div className="flex w-full flex-col justify-between md:flex-row">
+      <div className="flex w-full flex-col items-center justify-between md:flex-row">
         <div className="flex-col">
           <h1 className="mb-4 max-w-xl text-center text-5xl font-bold leading-snug md:mb-8 md:text-left md:text-4xl md:leading-snug lg:text-6xl lg:leading-snug">
             Fashion Has Never Been Cheaper

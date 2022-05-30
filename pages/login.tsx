@@ -35,65 +35,46 @@ const Login = ({}) => {
   };
 
   return (
-    <>
-      {data?.login.errors && (
-        <p className="text-red-500">{data.login.errors[0].message}</p>
-      )}
+    <div className="mx-auto max-w-lg">
       <form
         onSubmit={(e) => onSubmit(e)}
-        className="mb-4 rounded bg-white px-8 pt-6 pb-8 shadow-md"
+        className="rounded-md border-2 p-20 shadow-inner"
       >
-        <div className="mb-4">
-          <label
-            className="mb-2 block text-sm font-bold text-gray-700"
-            htmlFor="username"
-          >
-            Username or Email Address
-          </label>
+        <h1 className="mb-8 text-center text-4xl font-bold">Login</h1>
+        {data?.login.errors && (
+          <p className="mb-5 text-red-500">{data.login.errors[0].message}</p>
+        )}
+        <div className="flex flex-col">
+          <label htmlFor="identifier">Username or Email Address</label>
           <input
-            className="w-full appearance-none rounded border py-2 px-3 leading-tight text-gray-700 shadow focus:outline-none focus:ring"
-            id="identifier"
+            className="mt-1 rounded-md border-2 py-1 px-3"
             type="text"
-            placeholder="johndoe"
+            id="identifier"
+            placeholder="john@email.com"
             value={identifier}
-            onChange={(e) => setIdentifier(e.target.value)}
+            onChange={({ target: { value } }) => setIdentifier(value)}
           />
         </div>
-        <div className="mb-6">
-          <label
-            className="mb-2 block text-sm font-bold text-gray-700"
-            htmlFor="password"
-          >
-            Password
-          </label>
+
+        <div className="my-5 flex flex-col">
+          <label htmlFor="password">Password</label>
           <input
-            className="mb-3 w-full appearance-none rounded border py-2 px-3 leading-tight text-gray-700 shadow focus:outline-none focus:ring"
-            id="password"
+            className="mt-1 rounded-md border-2 py-1 px-3"
             type="password"
+            id="password"
             placeholder="********"
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={({ target: { value } }) => setPassword(value)}
           />
         </div>
-        <div className="flex items-center justify-between">
-          <button
-            className="focus:shadow-outline rounded bg-blue-500 py-2 px-4 font-bold text-white hover:bg-blue-700 focus:outline-none"
-            type="submit"
-          >
-            Sign In
-          </button>
-          <a
-            className="inline-block align-baseline text-sm font-bold text-blue-500 hover:text-blue-800"
-            href="#"
-          >
-            Forgot Password?
-          </a>
-        </div>
+
+        <input
+          className="w-full cursor-pointer rounded-md bg-primary p-3 text-2xl text-white"
+          type="submit"
+          value="Login"
+        />
       </form>
-      <p className="text-center text-xs text-gray-500">
-        &copy;2020 Acme Corp. All rights reserved.
-      </p>
-    </>
+    </div>
   );
 };
 
