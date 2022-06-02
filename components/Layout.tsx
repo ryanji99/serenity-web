@@ -8,7 +8,7 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <div>
+    <div className="wrapper min-h-screen bg-opacity-0 bg-cover font-neuePlak">
       <Head>
         <title>Hello</title>
         <meta name="keywords" content="replace" />
@@ -17,7 +17,7 @@ const Layout = ({ children }: LayoutProps) => {
       </Head>
 
       <Navbar />
-      <main className="py-[2%] px-[5%]">{children}</main>
+      <main className="h-full py-[2%] px-[5%]">{children}</main>
     </div>
   );
 };

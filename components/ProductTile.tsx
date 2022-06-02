@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import tempSupreme from '../public/images/supreme.jpg';
+import tempSupreme from '../images/supreme.jpg';
 
 const ProductTile = () => {
   return (

@@ -6,7 +6,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#EA4408',
+        primary: '#06FF79',
+        dark: '#080808',
+        light: '#fafafa',
+      },
+      fontFamily: {
+        neuePlak: ['Neue Plak Extended Black', 'sans-serif'],
       },
     },
   },

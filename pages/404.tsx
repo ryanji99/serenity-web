@@ -3,7 +3,11 @@ import Layout from '../components/Layout';
 const NotFoundPage = () => {
   return (
     <Layout>
-      <h1 className="text-5xl">Oops! Page not found!</h1>
+      <div className="flex items-center justify-center">
+        <h1 className="text-center text-5xl uppercase text-light">
+          404 - Page not found!
+        </h1>
+      </div>
     </Layout>
   );
 };

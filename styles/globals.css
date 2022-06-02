@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Neue Plak Extended Black';
+  src: url('../public/fonts/NeuePlak-ExtendedBlack.ttf');
+}
+
+.wrapper {
+  background-image: url('../images/bg-image.png');
+}
+
 .fa-icon {
   color: transparent;
   stroke: #000;
