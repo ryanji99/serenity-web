@@ -1,25 +1,11 @@
-import { DocumentNode, gql, useMutation } from '@apollo/client';
+import { useMutation } from '@apollo/client';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { ReactElement, useState } from 'react';
 import Layout from '../components/Layout';
+import { LOGIN } from '../graphql/queries';
 import { useAppDispatch } from '../hooks/reduxHooks';
 import { loginAction } from '../src/features/auth/authSlice';
-
-const LOGIN: DocumentNode = gql`
-  mutation Login($data: LoginOptions!) {
-    login(data: $data) {
-      errors {
-        field
-        message
-      }
-      user {
-        id
-        username
-      }
-    }
-  }
-`;
 
 const Login = ({}) => {
   const router = useRouter();
@@ -27,7 +13,7 @@ const Login = ({}) => {
 
   const [identifier, setIdentifier] = useState<string>('');
   const [password, setPassword] = useState<string>('');
-  const [login, { data, loading, error }] = useMutation(LOGIN);
+  const [login, { data }] = useMutation(LOGIN);
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -65,7 +51,7 @@ const Login = ({}) => {
             Username or Email Address
           </label>
           <input
-            className="mt-1 rounded-md border-2 py-2 px-3 text-sm text-dark"
+            className="text-md mt-1 rounded-md border-2 py-2 px-3 text-dark"
             type="text"
             id="identifier"
             placeholder="john@email.com"
@@ -79,7 +65,7 @@ const Login = ({}) => {
             Password
           </label>
           <input
-            className="mt-1 rounded-md border-2 py-2 px-3 text-sm text-dark"
+            className="text-md mt-1 rounded-md border-2 py-2 px-3 text-dark"
             type="password"
             id="password"
             placeholder="********"
@@ -94,7 +80,7 @@ const Login = ({}) => {
           value="Login"
         />
         <Link href="/forgotPass">
-          <a className="mt-5 block text-right text-sm text-light">
+          <a className="text-md mt-5 block text-right text-light">
             Forgot Password?
           </a>
         </Link>
